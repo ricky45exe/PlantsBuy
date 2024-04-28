@@ -1,0 +1,62 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" type="image/x-icon" href="images/logo.jpg" />
+    <title>PlantsBuy</title>
+    <style>
+      @import
+      url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+      html, body { font-family: "Poppins", sans-serif; margin: 0; }
+      .thankyou-page ._header { background: #90ee90; padding: 100px; text-align:
+      center; background: #90ee90; } .thankyou-page ._header .logo { max-width:
+      200px; margin: 0 auto 10px; margin-top: -20px; } .thankyou-page ._header
+      .logo img { width: 100%; height: 100px; width: 100px; } .thankyou-page
+      ._header h1 { font-size: 65px; font-weight: 800; color: white; margin: 0;
+      } .thankyou-page ._body { margin: -70px 0 30px; } .thankyou-page ._body
+      ._box { margin: auto; max-width: 80%; padding: 1px; padding-left: 20px;
+      padding-right: 20px; background: white; border-radius: 3px; box-shadow: 0
+      0 35px rgba(10, 10, 10, 0.12); -moz-box-shadow: 0 0 35px rgba(10, 10, 10,
+      0.12); -webkit-box-shadow: 0 0 35px rgba(10, 10, 10, 0.12); text-align:
+      center; } .thankyou-page ._body ._box h2 { font-size: 32px; font-weight:
+      600; color: #008000; } .thankyou-page ._footer { text-align: center;
+      padding: 20px 30px; text-decoration: none; } .thankyou-page ._footer .btn
+      { background: #4ab74a; color: white; border: 0; font-size: 14px;
+      font-weight: 600; border-radius: 0; letter-spacing: 0.8px; padding: 10px
+      33px; text-transform: uppercase; text-decoration: none; } h1 {
+      font-family: poppins; } #Contact { text-decoration: none; }
+    </style>
+  </head>
+  <body>
+    <div class="thankyou-page">
+      <div class="_header">
+        <div class="logo">
+          <img src="images/tick.png" alt="" />
+        </div>
+        <h1>Thank You!</h1>
+      </div>
+      <div class="_body">
+        <div class="_box">
+          <h2>
+            Your order ID is
+            <span id="orderId">{{orderid}}</span>, and will be shipped to your
+            address soon.
+          </h2>
+          <h3>Further updates will be sent to your mail.</h3>
+          <p>
+            Thank you for choosing us for your plant shopping! 🌿 We're thrilled
+            to have had the opportunity to provide you with greenery that
+            brightens your space and adds life to your home.
+          </p>
+        </div>
+      </div>
+      <div class="_footer">
+        <p id="Contact">Having trouble?
+          <a href="http://localhost:4500/ourteam">Contact us</a></p>
+        <a class="btn" href="http://localhost:4500/">Back to homepage</a>
+      </div>
+    </div>
+
+  </body>
+</html>

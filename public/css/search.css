@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque&family=Open+Sans&family=Oswald:wght@500&family=Playfair+Display&family=Poppins:wght@200;300&family=Roboto+Slab&display=swap");
+body {
+  font-family: sans-serif;
+  font-size: 14px;
+}
+
+.image-container {
+  text-align: center;
+  margin: 20px;
+}
+
+img {
+  cursor: pointer;
+  width: 300px;
+  height: 300px;
+  margin-top: 6px;
+  margin-left: 2px;
+}
+
+.modal {
+  display: none; /* Hide the modal by default */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 98%; /* Set the width of the modal container */
+  height: 98%; /* Set the height of the modal container */
+  background: rgba(255, 255, 255, 0.829); /* Semi-transparent overlay */
+  /* Hide the scrollbar */
+  overflow-y: none;
+  overflow-x: none;
+  box-shadow: 3px 3px 3px 3px rgba(128, 128, 128, 0.311);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* For Webkit browsers like Chrome and Safari */
+.modal::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+.modal::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px lightgreen;
+  border-radius: 10px;
+}
+
+/* Handle */
+.modal::-webkit-scrollbar-thumb {
+  background: lightgreen;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.modal::-webkit-scrollbar-thumb:hover {
+  background: darkgreen;
+}
+/* For horizontal scrollbar */
+
+/* Style for the modal content */
+.modal-content {
+  width: 100%; /* Set the width of the modal content to 100% */
+  height: 100%; /* Set the height of the modal content to 100% */
+  background: #fff; /* Background color of the modal content */
+  /* padding: 20px; */
+  box-sizing: border-box; /* Include padding and border in the total width and height */
+
+  /* Optional: Add a box shadow for a better look */
+  overflow-y: auto;
+}
+
+/* Optional: Style for closing the modal */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 40px;
+}
+.close:hover {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+.close-cart {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 20px;
+}
+#cartModal {
+  display: none;
+  position: fixed;
+  top: 50px;
+  left: 50%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  width: 200px; /* Set your desired width */
+  height: 50px; /* Set your desired height */
+  /* Set your desired background color */
+  border: 1px solid #ccc; /* Add border or customize as needed */
+  border-radius: 10px; /* Add border-radius or customize as needed */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add box shadow or customize as needed */
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

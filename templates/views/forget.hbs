@@ -1,0 +1,60 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="images/logo.jpg" />
+    <title>PlantsBuy</title>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Phudu:wght@500&family=Poppins:wght@200&family=Roboto:wght@300&family=Teko:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/forget.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <form action="/forget" method="post">
+        <h1>Forget Password?</h1>
+        {{#if message}}
+          <div
+            class="success-message"
+            style="font-weight: bolder;"
+          >{{message}}</div>
+        {{else}}
+          <div
+            class="failure-message"
+            style="font-weight: bolder; margin: auto; text-align: center;"
+          >
+            {{message}}
+          </div>
+        {{/if}}
+
+        <div class="text">
+          Forget Password? Don't worry, just fill in your email and we will send
+          you a link to reset your password.
+        </div>
+        <div class="input-box">
+          <input
+            type="email"
+            placeholder="Enter Your Email"
+            id="input1"
+            name="email"
+            required
+          />
+          <i class="bx bxs-envelope"></i>
+        </div>
+
+        <button type="submit" id="btn" class="btn" onclick="disableInput()">
+          Submit
+        </button>
+
+      </form>
+    </div>
+
+  </body>
+</html>

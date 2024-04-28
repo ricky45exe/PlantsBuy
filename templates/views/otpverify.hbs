@@ -1,0 +1,50 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="images/logo.jpg" />
+    <title>PlantsBuy</title>
+    <link rel="stylesheet" href="css/otpcss.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <i class="bx bxs-check-shield"></i>
+      </header>
+
+      {{#if message}}
+        <div
+          class="failure-message"
+          style="font-weight: bolder; text-align: center;"
+        >
+          {{message}}<br />
+
+          <a href="http://localhost:4500/registration"><button
+              style="border-radius:6px;margin-top:10px;width:120px;padding:5px 10px;cursor:pointer;background-color:#03bf03;color:white;outline:none;border:none;"
+              ;
+            >Go Back</button></a>
+        </div>
+      {{/if}}
+
+      <h4>Enter OTP Code</h4>
+
+      <form action="/otp" method="post">
+        <div class="input-field">
+          <input type="text" name="digit1" />
+          <input type="text" name="digit2" disabled />
+          <input type="text" name="digit3" disabled />
+          <input type="text" name="digit4" disabled />
+        </div>
+        <button>Verify OTP</button>
+      </form>
+      {{! modal box }}
+    </div>
+
+    <script src="js/verotp.js" defer></script>
+  </body>
+</html>

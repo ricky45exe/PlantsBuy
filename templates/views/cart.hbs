@@ -1,0 +1,78 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="images/logo.jpg" />
+    <title>PlantsBuy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/cart.css" />
+  </head>
+  <body>
+    <div id="cartbody">
+      <div id="cartItems"></div>
+
+      <div class="summary">
+        <h2>Price Summary</h2>
+       
+        <div class="summary-details">
+          <div class="summary-top" style="margin-bottom: 15px">
+            <div style="font-size: 18px">
+              Items:
+              <span id="summaryItemsCount">0</span>
+            </div>
+            <div style="font-size: 18px">
+              Total: ₹<span id="summaryTotalPrice">0</span>
+            </div>
+          </div>
+           <div class="summary-item">
+            <span>Shipping Mode:</span>
+            <span>₹50 </span>
+        </div>
+
+          <div class="summary-item coupon" style="margin-top:10px;">
+        <input type="text" placeholder="Enter Coupon Code" id="code" />
+        <button class="Apply" onclick="applyCoupon()">Apply</button>
+      </div>
+       <hr class="hori" />
+          
+
+          <div style="margin-top: 20px; font-size: 18px">
+            Total Price: ₹<span id="totalPrice">0</span>
+          </div>
+          {{#if isAuthenticated}}
+          <a href="http://localhost:4500/billing"><button
+              class="btn"
+            >CHECKOUT</button></a>
+            {{else}}
+            <a href="http://localhost:4500/registration"><button
+              class="btn">PROCEED TO CHECKOUT</button>
+            {{/if}}
+        </div>
+      </div>
+    </div>
+    <div>
+      <a href="http://localhost:4500/"><button type="button" id="bshop">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="16"
+            fill="currentColor"
+            class="bi bi-arrow-left-circle"
+            viewBox="0 0 24 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z"
+            />
+          </svg>
+          Back To Shop
+        </button></a>
+    </div>
+
+    <script src="js/cart.js"></script>
+  </body>
+</html>

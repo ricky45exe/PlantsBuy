@@ -1,0 +1,949 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="images/logo.jpg" />
+    <title>PlantsBuy</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/style2.css" />
+
+    <!-- Unicons CSS -->
+
+  </head>
+  <body>
+    <img src="images/mobileview.png" alt="Mobile Image" id="mobileImage" />
+    <div id="preloader">
+
+    </div>
+    {{! <div id="wbd"> }}
+    <nav class="nav" id="nav">
+      <i class="uil uil-bars navOpenBtn"></i>
+      <a href="http://localhost:4500" class="logo"><b>PlantsBuy</b></a>
+
+      <ul class="nav-links">
+        <i class="uil uil-times navCloseBtn"></i>
+        <li><a href="http://localhost:4500">Home</a></li>
+        <li><a href="http://localhost:4500/testimony">Testimonials</a></li>
+        <li><a href="http://localhost:4500/ourteam">Our Team</a></li>
+        <li><a href="http://localhost:4500/terms">Terms and Conditions</a></li>
+        <li><a href="http://localhost:4500/cart">Cart</a></li>
+        <li class="nav-ele dropdown">
+          <a class="nav-link" href="#" id="profile-dropdown">
+            {{#if isAuthenticated}}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="19"
+                height="19"
+                viewBox="0 0 21 21"
+                style="fill: rgba(0, 128, 0, 1);transform: ;msFilter:;"
+              ><path
+                  d="M7.5 6.5C7.5 8.981 9.519 11 12 11s4.5-2.019 4.5-4.5S14.481 2 12 2 7.5 4.019 7.5 6.5zM20 21h1v-1c0-3.859-3.141-7-7-7h-4c-3.86 0-7 3.141-7 7v1h17z"
+                ></path></svg>
+            {{else}}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="19"
+                height="19"
+                viewBox="0 0 21 21"
+                style="fill: rgba(0, 128, 0, 1);transform: ;msFilter:;"
+              ><path
+                  d="M12 2a5 5 0 1 0 5 5 5 5 0 0 0-5-5zm0 8a3 3 0 1 1 3-3 3 3 0 0 1-3 3zm9 11v-1a7 7 0 0 0-7-7h-4a7 7 0 0 0-7 7v1h2v-1a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v1z"
+                ></path></svg>
+            {{/if}}
+          </a>
+          <div class="dropdown-content">
+            {{#if isAuthenticated}}
+              <a class="nav-link" href="/signout">Sign Out</a>
+            {{else}}
+              <a class="nav-link" href="/registration">Sign In</a>
+            {{/if}}
+          </div>
+        </li>
+      </ul>
+
+      <!-- <i class="uil uil-search search-icon" id="searchIcon"></i> -->
+      <svg
+        style="cursor: pointer;"
+        xmlns="http://www.w3.org/2000/svg"
+        width="20"
+        height="20"
+        id="searchIcon"
+        fill="#008000"
+        class="bi bi-search"
+        viewBox="0 0 15 15"
+      >
+        <path
+          d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"
+        />
+      </svg>
+
+      <div class="search-box" class="pname">
+        {{! <i class="uil uil-search search-icon" id="btn" style="border:none;"></i> }}
+        <input
+          type="text"
+          id="pname"
+          placeholder="Search here..."
+          onkeypress="handleKeyPress(event)"
+        />
+      </div>
+    </nav>
+    <div id="wbd">
+      <video
+        id="bgVideo"
+        src="videos/Slider.mp4"
+        height="315px"
+        class="mb-5"
+        autoplay
+        loop
+        muted
+      ></video>
+
+      <img
+        src="images/best seller.jpg"
+        alt=""
+        width="96.6%"
+        style="margin-left: 25px;margin-top:20px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);"
+      />
+
+      <div class="main" id="p4">
+        <div class="cards">
+          <div>
+            <img
+              class="card-img"
+              src="images/Monstera-Deliciosa-Plant.webp"
+              height="260px"
+              alt=""
+            />
+            <h1 class="name">Monstera Deliciosa</h1>
+            <p class="type">
+              Category: Indoor Plant
+            </p>
+            <div class="card-bottom">
+              <p class="price">From ₹799 </p>
+              {{#if isAuthenticated}}
+                <a href="http://localhost:4500/billing"><button class="cart">
+                    Buy Now
+                  </button></a>
+              {{else}}
+                <a href="http://localhost:4500/registration"><button
+                    class="cart"
+                  >
+                    Buy Now
+                  </button></a>
+              {{/if}}
+            </div>
+          </div>
+        </div>
+        <div class="cards">
+          <div>
+            <img
+              class="card-img"
+              src="images/Peacock-Plant.webp"
+              height="260px"
+              alt=""
+            />
+            <h1 class="name">Peacock Plant</h1>
+            <p class="type">
+              Category: Outdoor Plant
+            </p>
+            <div class="card-bottom">
+              <p class="price">From ₹899 </p>
+              {{#if isAuthenticated}}
+                <a href="http://localhost:4500/billing"><button class="cart">
+                    Buy Now
+                  </button></a>
+              {{else}}
+                <a href="http://localhost:4500/registration"><button
+                    class="cart"
+                  >
+                    Buy Now
+                  </button></a>
+              {{/if}}
+            </div>
+          </div>
+        </div>
+        <div class="cards">
+          <div>
+            <img
+              class="card-img"
+              src="images/thuja-plant-xl.webp"
+              height="260px"
+              alt=""
+            />
+            <h1 class="name">Thuja Plant (XL)</h1>
+            <p class="type">
+              Category: Outdoor Plant
+            </p>
+            <div class="card-bottom">
+              <p class="price">From ₹1999 </p>
+              {{#if isAuthenticated}}
+                <a href="http://localhost:4500/billing"><button class="cart">
+                    Buy Now
+                  </button></a>
+              {{else}}
+                <a href="http://localhost:4500/registration"><button
+                    class="cart"
+                  >
+                    Buy Now
+                  </button></a>
+              {{/if}}
+            </div>
+          </div>
+        </div>
+        <div class="cards">
+          <div>
+            <img
+              class="card-img"
+              src="images/areca-palm-plant-xl.webp"
+              height="260px"
+              alt=""
+            />
+            <h1 class="name">Areca Palm Plant (XL)</h1>
+            <p class="type">
+              Category: Outdoor Plant
+            </p>
+            <div class="card-bottom">
+              <p class="price">From ₹1199 </p>
+              {{#if isAuthenticated}}
+                <a href="http://localhost:4500/billing"><button class="cart">
+                    Buy Now
+                  </button></a>
+              {{else}}
+                <a href="http://localhost:4500/registration"><button
+                    class="cart"
+                  >
+                    Buy Now
+                  </button></a>
+              {{/if}}
+            </div>
+          </div>
+        </div></div>
+      <div class="carousel">
+        <div class="list">
+          <div class="item">
+            <img src="images/img1.png" />
+            <div class="introduce">
+              <div class="title">Fiddle-Leaf Fig</div>
+              <div class="topic">Ficus lyrata</div>
+              <div class="des">
+                <!-- 20 lorem -->
+                Ficus lyrata, commonly known as the fiddle-leaf fig, banjo fig,
+                fiddle-leaved fig tree, lyre leaf fig tree, or lyre-leaved fig
+                tree, is a species of plant in the mulberry and fig family
+                Moraceae. It is native to western Africa, but is cultivated
+                around the world as an ornamental plant. It has received the
+                Royal Horticultural Society's Award of Garden Merit.
+              </div>
+              <button class="seeMore">SEE MORE &#8599</button>
+            </div>
+            <div class="detail">
+              <div class="title">Fiddle-Leaf Fig</div>
+              <div class="des">
+                <!-- lorem 50 -->
+                Ficus lyrata leaves are lyrate, meaning that they resemble a
+                lyre. The leaves are variable in shape, but often with a broad
+                apex and narrow middle, resembling a lyre or fiddle; they are up
+                to 45 cm (18 in) long and 30 cm (12 in) broad (though usually
+                smaller) with a leathery texture, prominent veins and a wavy
+                margin. The fruit is a green fig 2.5-3 cm (1-¼ in) diameter.
+              </div>
+              <div class="specifications">
+                <div>
+                  <p>Type</p>
+                  <p>Indoors</p>
+                </div>
+                <div>
+                  <p>Temp</p>
+                  <p>18°C-24°C</p>
+                </div>
+                <div>
+                  <p>Propagation</p>
+                  <p>Division</p>
+                </div>
+                <div>
+                  <p>Family</p>
+                  <p>Moraceae</p>
+                </div>
+                <div>
+                  <p>Conservation</p>
+                  <p>Least Concern</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="item">
+            <img src="images/img2.png" />
+            <div class="introduce">
+              <div class="title">Swiss Cheese Plant</div>
+              <div class="topic">Monstera adansonii</div>
+              <div class="des">
+                <!-- 20 lorem -->
+                Variegated Monstera or 'Swiss cheese plant', such as the M.
+                deliciosa pictured above can sell for up to $5000. A rare M.
+                adansonii has sold for $700, and M. aurea sold for $3,726 on the
+                popular auction site Trade Me.
+              </div>
+              <button class="seeMore">SEE MORE &#8599</button>
+            </div>
+            <div class="detail">
+              <div class="title">Swiss Cheese Plant</div>
+              <div class="des">
+                <!-- lorem 50 -->
+                The Swiss cheese plant (Monstera adansonii) gets its common name
+                from its large, heart-shaped leaves that develop holes as the
+                plant ages (in a process called fenestration). This makes the
+                leaves resemble Swiss cheese. Native to Central and South
+                America, the Swiss cheese plant is a tropical perennial that's
+                typically grown as an indoor plant. It's important to note that
+                all parts of Monstera plants are toxic to pets, so be careful
+                when growing them indoors.
+              </div>
+              <div class="specifications">
+                <div>
+                  <p>Type</p>
+                  <p>Indoors</p>
+                </div>
+                <div>
+                  <p>Temp</p>
+                  <p>18°C-27°C</p>
+                </div>
+                <div>
+                  <p>Propagation</p>
+                  <p>Air Layering</p>
+                </div>
+                <div>
+                  <p>Family</p>
+                  <p>Araceae</p>
+                </div>
+                <div>
+                  <p>Conservation</p>
+                  <p>NA</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="item">
+            <img src="images/img3.png" />
+            <div class="introduce">
+              <div class="title">Compacta</div>
+              <div class="topic">Hoya carnosa</div>
+              <div class="des">
+                <!-- 20 lorem -->
+                Another plant with unique variegation, a Hoya carnosa compacta
+                'Hindu Rope' became the most expensive houseplant ever sold on
+                Trade Me in June 2020. The site's member sold it for $6500. This
+                established plant had a cream/yellow variegation on the inside
+                of the leaf.
+              </div>
+              <button class="seeMore">SEE MORE &#8599</button>
+            </div>
+            <div class="detail">
+              <div class="title">Compacta</div>
+              <div class="des">
+                <!-- lorem 50 -->
+                Hoya carnosa 'compacta', commonly known as the Hindu rope plant,
+                is a unique and popular houseplant prized for its distinctive,
+                twisted foliage. Belonging to the Apocynaceae family, it's a
+                cultivar of the Hoya carnosa species, native to Eastern Asia.
+                Its thick, waxy leaves grow in a rope-like fashion, making it an
+                attractive addition to any indoor space. This low-maintenance
+                plant thrives in bright, indirect light and prefers
+                well-draining soil. With proper care, including regular watering
+                and occasional fertilization, it rewards growers with clusters
+                of fragrant, star-shaped flowers in summer. Its trailing vines
+                make it ideal for hanging baskets or cascading displays.
+              </div>
+              <div class="specifications">
+                <div>
+                  <p>Type</p>
+                  <p>Indoors</p>
+                </div>
+                <div>
+                  <p>Temp</p>
+                  <p>18°C-27°C</p>
+                </div>
+                <div>
+                  <p>Propagation</p>
+                  <p>Stem Cutting</p>
+                </div>
+                <div>
+                  <p>Family</p>
+                  <p>Apocynaceae</p>
+                </div>
+                <div>
+                  <p>Conservation</p>
+                  <p>Least Concern</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="item">
+            <img src="images/img4.png" />
+            <div class="introduce">
+              <div class="title">Minima</div>
+              <div class="topic">Rhaphidophora Tetrasperma</div>
+              <div class="des">
+                <!-- 20 lorem -->
+                The plant is often referred to as 'Mini Monstera' or 'Piccolo.'
+                As New Zealand's passion for houseplants gows, an extremely rare
+                variegated specimen sold in August 2020 for $8,150 on the
+                country's largest trading site Trade Me. What makes this sale
+                even more surprising is that the small minima had only four
+                leaves.
+              </div>
+              <button class="seeMore">SEE MORE &#8599</button>
+            </div>
+            <div class="detail">
+              <div class="title">Minima</div>
+              <div class="des">
+                <!-- lorem 50 -->
+                Philodendron Minima, also known as Philodendron 'Minima', is a
+                compact and low-maintenance houseplant prized for its lush green
+                foliage and ease of care. With its heart-shaped leaves and
+                trailing growth habit, it adds a touch of tropical beauty to any
+                indoor space. This plant thrives in moderate to bright indirect
+                light and prefers well-draining soil. Keep the soil consistently
+                moist but not waterlogged. Philodendron Minima is an excellent
+                choice for beginners or anyone looking to add a splash of green
+                to their home decor.
+              </div>
+              <div class="specifications">
+                <div>
+                  <p>Type</p>
+                  <p>Indoors</p>
+                </div>
+                <div>
+                  <p>Temp</p>
+                  <p>15°C-20°C</p>
+                </div>
+                <div>
+                  <p>Propagation</p>
+                  <p>Division</p>
+                </div>
+                <div>
+                  <p>Family</p>
+                  <p>Arum</p>
+                </div>
+                <div>
+                  <p>Conservation</p>
+                  <p>Rare</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="item">
+            <img src="images/img5.png" />
+            <div class="introduce">
+              <div class="title">Old Pine Bonsaii</div>
+              <div class="topic">Pinus thunbergii</div>
+              <div class="des">
+                <!-- 20 lorem -->
+                Bonsai trees catch the eye of plant lovers looking for a unique
+                indoor specimen. The highest priced Bonsai is a centuries-old
+                White Pine, which sold for 100,000,000 yen (about $1.3M) at the
+                11th Asia-Pacific Bonsai and Suiseki Convention & Exhibition in
+                Takamatsu, Kagawa, Japan.
+              </div>
+              <button class="seeMore">SEE MORE &#8599</button>
+            </div>
+            <div class="detail">
+              <div class="title">Old Pine Bonsaii</div>
+              <div class="des">
+                <!-- lorem 50 -->
+                Old Pine Bonsai, often crafted from species like Japanese Black
+                Pine or Scots Pine, embodies the artistry and patience of bonsai
+                cultivation. These miniature trees, meticulously shaped over
+                decades, evoke the grandeur of ancient forests in a compact
+                form. With their gnarled trunks, weathered bark, and delicate
+                foliage meticulously trained into elegant forms, Old Pine Bonsai
+                represents a harmonious balance between nature and human
+                craftsmanship. Each tree tells a story of resilience, endurance,
+                and the passage of time, making them cherished treasures in
+                bonsai collections.
+              </div>
+              <div class="specifications">
+                <div>
+                  <p>Type</p>
+                  <p>Both</p>
+                </div>
+                <div>
+                  <p>Temp</p>
+                  <p>10°C-25°C</p>
+                </div>
+                <div>
+                  <p>Propagation</p>
+                  <p>Cuttings</p>
+                </div>
+                <div>
+                  <p>Family</p>
+                  <p>Pinaceae</p>
+                </div>
+                <div>
+                  <p>Conservation</p>
+                  <p>NA</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="arrows">
+          <button id="prev">&#10094;</button>
+          <button id="next">&#10095;</button>
+          <button id="back">See All &#8599</button>
+        </div>
+      </div>
+      <img
+        src="images/top trending.jpg"
+        alt=""
+        width="97%"
+        style="margin-left: 25px;margin-top:20px;"
+      />
+      <div class="main" id="p4">
+        <div class="cards">
+          <div>
+            <img
+              class="card-img"
+              src="images/Chlorophytum-Spider-Plant.webp"
+              height="260px"
+              alt=""
+            />
+            <h1 class="name">Chlorophytum Plant</h1>
+            <p class="type">
+              Category: Indoor Plant
+            </p>
+            <div class="card-bottom">
+              <p class="price">From ₹299 </p>
+              {{#if isAuthenticated}}
+                <a href="http://localhost:4500/billing"><button class="cart">
+                    Buy Now
+                  </button></a>
+              {{else}}
+                <a href="http://localhost:4500/registration"><button
+                    class="cart"
+                  >
+                    Buy Now
+                  </button></a>
+              {{/if}}
+            </div>
+          </div>
+        </div>
+        <div class="cards">
+          <div>
+            <img
+              class="card-img"
+              src="images/Lucky-Bamboo-Plant.webp"
+              height="260px"
+              alt=""
+            />
+            <h1 class="name">Lucky Bamboo Plant</h1>
+            <p class="type">
+              Category: Indoor Plant
+            </p>
+            <div class="card-bottom">
+              <p class="price">From ₹699 </p>
+              {{#if isAuthenticated}}
+                <a href="http://localhost:4500/billing"><button class="cart">
+                    Buy Now
+                  </button></a>
+              {{else}}
+                <a href="http://localhost:4500/registration"><button
+                    class="cart"
+                  >
+                    Buy Now
+                  </button></a>
+              {{/if}}
+            </div>
+          </div>
+        </div>
+        <div class="cards">
+          <div>
+            <img
+              class="card-img"
+              src="images/Money-Plant-Vareigated.webp"
+              height="260px"
+              alt=""
+            />
+            <h1 class="name">Money Plant</h1>
+            <p class="type">
+              Category: Indoor/Outdoor Plant
+            </p>
+            <div class="card-bottom">
+              <p class="price">From ₹599 </p>
+              {{#if isAuthenticated}}
+                <a href="http://localhost:4500/billing"><button class="cart">
+                    Buy Now
+                  </button></a>
+              {{else}}
+                <a href="http://localhost:4500/registration"><button
+                    class="cart"
+                  >
+                    Buy Now
+                  </button></a>
+              {{/if}}
+            </div>
+          </div>
+        </div>
+        <div class="cards">
+          <div>
+            <img
+              class="card-img"
+              src="images/Money-Plant.webp"
+              height="260px"
+              alt=""
+            />
+            <h1 class="name">Money Plant</h1>
+            <p class="type">
+              Category: Indoor/Outdoor Plant
+            </p>
+            <div class="card-bottom">
+              <p class="price">From ₹399 </p>
+              {{#if isAuthenticated}}
+                <a href="http://localhost:4500/billing"><button class="cart">
+                    Buy Now
+                  </button></a>
+              {{else}}
+                <a href="http://localhost:4500/registration"><button
+                    class="cart"
+                  >
+                    Buy Now
+                  </button></a>
+              {{/if}}
+            </div>
+          </div>
+        </div>
+
+        <div class="cards">
+          <div>
+            <img
+              class="card-img"
+              src="images/Rubber-Plant.webp"
+              height="260px"
+              alt=""
+            />
+            <h1 class="name">Rubber Plant</h1>
+            <p class="type">
+              Category: Indoor Plant
+            </p>
+            <div class="card-bottom">
+              <p class="price">From ₹299 </p>
+              {{#if isAuthenticated}}
+                <a href="http://localhost:4500/billing"><button class="cart">
+                    Buy Now
+                  </button></a>
+              {{else}}
+                <a href="http://localhost:4500/registration"><button
+                    class="cart"
+                  >
+                    Buy Now
+                  </button></a>
+              {{/if}}
+            </div>
+          </div>
+        </div>
+        <div class="cards">
+          <div>
+            <img
+              class="card-img"
+              src="images/ZZ-Plant.webp"
+              height="260px"
+              alt=""
+            />
+            <h1 class="name">ZZ Plant</h1>
+            <p class="type">
+              Category: Indoor Plant
+            </p>
+            <div class="card-bottom">
+              <p class="price">From ₹1399 </p>
+              {{#if isAuthenticated}}
+                <a href="http://localhost:4500/billing"><button class="cart">
+                    Buy Now
+                  </button></a>
+              {{else}}
+                <a href="http://localhost:4500/registration"><button
+                    class="cart"
+                  >
+                    Buy Now
+                  </button></a>
+              {{/if}}
+            </div>
+          </div>
+        </div>
+        <div class="cards">
+          <div>
+            <img
+              class="card-img"
+              src="images/Snake-Plant.webp"
+              height="260px"
+              alt=""
+            />
+            <h1 class="name">Snake Plant</h1>
+            <p class="type">
+              Category: Indoor/Outdoor Plant
+            </p>
+            <div class="card-bottom">
+              <p class="price">From ₹749 </p>
+              {{#if isAuthenticated}}
+                <a href="http://localhost:4500/billing"><button class="cart">
+                    Buy Now
+                  </button></a>
+              {{else}}
+                <a href="http://localhost:4500/registration"><button
+                    class="cart"
+                  >
+                    Buy Now
+                  </button></a>
+              {{/if}}
+            </div>
+          </div>
+        </div>
+        <div class="cards">
+          <div>
+            <img
+              class="card-img"
+              src="images/Broken-heart.webp"
+              height="260px"
+              alt=""
+            />
+            <h1 class="name">Broken Heart</h1>
+            <p class="type">
+              Category: Indoor Plant
+            </p>
+            <div class="card-bottom">
+              <p class="price">From ₹649 </p>
+              {{#if isAuthenticated}}
+                <a href="http://localhost:4500/billing"><button class="cart">
+                    Buy Now
+                  </button></a>
+              {{else}}
+                <a href="http://localhost:4500/registration"><button
+                    class="cart"
+                  >
+                    Buy Now
+                  </button></a>
+              {{/if}}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-page" id="p3">
+        <div class="p-plants">
+          <div class="p-flex1">
+            <img
+              class="p-plant1"
+              src="images/formal upright bonsai.png"
+              height="150px"
+              width="150px"
+              alt=""
+            />
+            <div class="p-green-bg1">
+              Formal Upright. It is one of the most natural styles whereas the
+              trunk is perfectly straight. The branches should alternate left to
+              right to suggest age. A bonsai is created beginning with a
+              specimen of source material.
+            </div>
+          </div>
+          <div class="p-flex1" id="pt-2">
+            <div class="p-green-bg2">
+              Informal Upright.This style is characterized by a lightly curving
+              trunk displaying the harsh elements of nature. This can be
+              achieved with ease using wire and/or cords. It is as appropriate
+              for conifers as with deciduous trees.
+            </div>
+            <img
+              class="p-plant2"
+              src="images/informal Bonsai_tree.webp"
+              height="150px"
+              width="150px"
+              alt=""
+            />
+          </div>
+          <div class="p-flex1" id="pt-3">
+            <img
+              class="p-plant3"
+              src="images/Black Hills Spruce bonsai forest planting.jpg"
+              height="150px"
+              width="150px"
+              alt=""
+            />
+            <div class="p-green-bg3">
+              Black Hills spruce is a leftover from the last glacial retreat,
+              10,000-15,000 years ago and exists with other species, twinflower,
+              that are otherwise found further north.
+            </div>
+          </div>
+        </div>
+
+        <div class="p-descp">
+          <p class="p-about">Japanese</p>
+          <h2 class="p-keep">Art Technique<br /></h2>
+          <h1 class="p-your">Bonsai Styles</h1>
+          <div class="p-instructions">
+            <p>
+              Bonsai is the Japanese art of growing and shaping miniature trees
+              in containers, developed from the traditional Chinese art form of
+              penjing. Penjing and bonsai differ in that the former attempts to
+              display "wilder," more naturalistic scenes, often representing
+              landscapes, including elements such as water, rocks, or figurines;
+              on the other hand, bonsai typically focuses on a single tree or a
+              group of trees of the same species, with a higher level of
+              aesthetic refinement.
+              <br /><br />
+              They can go up to two weeks or more without water, so give them a
+              drink before you go, and don’t worry about them too much.
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+      <div
+        style="display: flex;margin:0 auto;justify-content:center;margin-top:20px;gap:100px"
+      >
+        <img src="images/delivery1.png" alt="" width="170px" />
+        <img src="images/delivery2 (3).png" alt="" width="220px" />
+        <img src="images/delivery3 (2).png" alt="" width="160px" />
+        <img src="images/delivery4 (2).png" alt="" width="160px" />
+      </div>
+      <footer>
+        <div class="row primary">
+          <div class="column about">
+            <h3 style="margin-bottom: 10px;font-size:30px">PlantsBuy</h3>
+            <p>
+              PlantsBuy is dedicated to bringing the joy of plants to everyone.
+              We offer a wide variety of healthy, unique plants, along with
+              expert care tips and personalized recommendations. Whether you're
+              a seasoned plant parent or just starting out, we're here to help
+              you create a thriving indoor jungle.
+            </p>
+          </div>
+          <div class="column links">
+            <h3 style="margin-bottom: 10px;font-size:30px">Quick Links</h3>
+            <ul>
+              <li style="margin-bottom: 3px;">
+                <a href="http://localhost:4500">Home</a>
+              </li>
+              <li style="margin-bottom: 3px;">
+                <a href="http://localhost:4500/ourteam">Our Team</a>
+              </li>
+              <li>
+                <a href="http://localhost:4500/terms">Terms Of Service</a>
+              </li>
+
+            </ul>
+          </div>
+          <div class="column subscribe">
+            <h3 style="margin-bottom: 10px;font-size:30px">Subscribe</h3>
+            <div>
+              <input
+                type="email"
+                id="emailInput"
+                placeholder="Your email id here"
+              />
+              <button onclick="subscribe()">Subscribe</button>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="row secondary">
+          <div>
+            <p style="margin-bottom: 10px;">
+              <i class="fa-solid fa-phone"></i>
+            </p>
+            <p>+91 7978098219</p>
+          </div>
+          <div>
+            <p style="margin-bottom: 10px;"><i class="fas fa-envelope"></i></p>
+            <p>support@plantsbuy.in</p>
+          </div>
+          <div>
+            <p style="margin-bottom: 10px;"><i
+                class="fas fa-map-marker-alt"
+              ></i></p>
+            <p>Bhadrak, Odisha</p>
+          </div>
+        </div>
+        <div class="row copyright">
+          <p style="padding: 15px 0px ;">Copyright &copy; 2024 PlantsBuy | All
+            Rights Reserved</p>
+        </div>
+      </footer>
+    </div>
+
+    <div id="plantCardsContainer">
+      <div id="preloader">
+
+      </div>
+    </div>
+    <!-- ... (your existing HTML code) ... -->
+
+    <div id="modal" class="modal">
+      <span
+        class="close"
+        onclick="closeModal()"
+        style="color: black;"
+      >&times;</span>
+      <div id="modalContent"></div>
+    </div>
+    <div id="cartModal" class="modal">
+      <div
+        class="modal-content"
+        style="background-color: rgb(84, 231, 84);padding-top:10px;border:1px solid rgb(84, 231, 84);"
+      >
+        <span class="close-cart" onclick="closeCartModal()">&times;</span>
+        <p>Added to Cart!</p>
+      </div>
+    </div>
+    <div id="myModal" class="modall">
+      <div
+        class="modal-content"
+        style="background-color: rgb(84, 231, 84);padding-top:10px;border:1px solid rgb(84, 231, 84);"
+      >
+        <span class="close-cart" onclick="closeplantModal()">&times;</span>
+        <p style="margin-left:10px;">No Such Plant Found!</p>
+      </div>
+    </div>
+
+    <script src="js/script2.js" defer></script>
+    <script src="js/search.js"></script>
+
+    <script>
+      loader = document.getElementById('preloader');
+      window.addEventListener('load', function(){ loader.style.display = 'none';
+      })
+    </script>
+
+    <script>
+      function handleKeyPress(event) { if (event.key === 'Enter') {
+      event.preventDefault(); document.getElementById('wbd').style.display =
+      'none'; getapi(); } }
+    </script>
+    <script>
+      function subscribe() { var emailInput =
+      document.getElementById('emailInput'); emailInput.value = ''; }
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,149 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="images/logo.jpg" />
+    <title>PlantsBuy</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      .custom-modal {
+      position:absolute;top:10;width:420px;color:black;background-color: white;
+      padding: 10px 5px; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0,
+      0.2);.close{ cursor:pointer;font-size: 30px;margin-top:-8px } } .userModal
+      { position:absolute;top:10;width:220px;color:black;background-color:
+      white; padding: 8px 5px;text-align: center; border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);.close{ cursor:pointer;font-size:
+      30px;margin-top:-8px;margin-left: 10px; }}
+      .existmodal{position:absolute;top:10;width:245px;color:black;background-color:
+      white; padding: 8px 5px;text-align: center; border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);.close{ cursor:pointer;font-size:
+      30px;margin-top:-8px;margin-left: 10px; } }
+    </style>
+  </head>
+  <body>
+
+    <div class="container" id="container">
+      <div class="form-container sign-up">
+        <form action="/" method="post">
+          <h1>Create Account</h1>
+          <div class="social-icons">
+            <a href="#" class="icon"><i
+                class="fa-brands fa-google-plus-g"
+              ></i></a>
+            <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
+            <a href="#" class="icon"><i
+                class="fa-brands fa-linkedin-in"
+              ></i></a>
+          </div>
+          <span>or use your email for registration</span>
+          <input type="text" placeholder="Name" name="name" required />
+          <input type="email" placeholder="Email" name="email" required />
+          <input
+            type="password"
+            placeholder="Password"
+            name="password"
+            required
+          />
+          <button>Sign Up</button>
+        </form>
+      </div>
+      <div class="form-container sign-in">
+        <form action="/home" method="post">
+          <h1>Sign In</h1>
+          <div class="social-icons">
+            <a href="#" class="icon"><i
+                class="fa-brands fa-google-plus-g"
+              ></i></a>
+            <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
+            <a href="#" class="icon"><i
+                class="fa-brands fa-linkedin-in"
+              ></i></a>
+          </div>
+          <span>or use your email password</span>
+          <input type="email" placeholder="Email" name="email" required />
+          <input
+            type="password"
+            placeholder="Password"
+            name="password"
+            required
+          />
+          <a href="/forget">Forget Your Password?</a>
+          <button>Sign In</button>
+        </form>
+      </div>
+      <div class="toggle-container">
+        <div class="toggle">
+          <div class="toggle-panel toggle-left">
+            <h1>Welcome Back!</h1>
+            <p>Enter your personal details to use all of site features</p>
+            <button class="hidden" id="login">Sign In</button>
+          </div>
+          <div class="toggle-panel toggle-right">
+            <h1>Hello, Friend!</h1>
+            <p>
+              Register with your personal details to use all of site features
+            </p>
+            <button class="hidden" id="register">Sign Up</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    {{#if showErrorModal}}
+
+      <div id="customModal" class="custom-modal">
+        <div
+          class="custom-content"
+          style="display:flex;position:relative;left:3%;gap:10px;margin-top:6px;"
+        >
+          <p id="custom-modal-message">Incorrect email or password. Please try
+            again.</p>
+          <span class="close" onclick="closeModal()">&times;</span>
+
+        </div>
+      </div>
+    {{/if}}
+    {{#if userExists}}
+
+      <div id="customModal" class="userModal">
+        <div
+          class="custom-content"
+          style="display:flex;position:relative;left:3%;gap:10px;margin-top:6px;"
+        >
+          <p id="custom-modal-message">User Already Exists!
+          </p>
+          <span class="close" onclick="closeModal()">&times;</span>
+
+        </div>
+      </div>
+    {{/if}}
+    {{#if showEmailNotExistModal}}
+
+      <div id="customModal" class="existmodal">
+        <div
+          class="custom-content"
+          style="display:flex;position:relative;left:3%;gap:10px;margin-top:6px;"
+        >
+          <p id="custom-modal-message">This email doesn't exist.
+          </p>
+          <span class="close" onclick="closeModal()">&times;</span>
+
+        </div>
+      </div>
+    {{/if}}
+    <script src="js/script.js"></script>
+    <script>
+
+      function closeModal() { var modal =
+      document.getElementById('customModal'); modal.style.display = 'none'; }
+      document.addEventListener('DOMContentLoaded', function() { var modal =
+      document.getElementById('customModal'); modal.style.display = 'flex'; });
+      setTimeout(closeModal,3000);
+    </script>
+  </body>
+</html>

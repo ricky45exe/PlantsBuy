@@ -1,0 +1,196 @@
+body {
+  background-image: url("../images/sarah.jpg"); /* Replace 'your-image-url.jpg' with the actual URL or path to your background image */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: "poppins", sans-serif;
+}
+#cartbody {
+  display: flex;
+
+  width: 77%;
+  margin: 100px auto;
+  /* padding-left: 20px; */
+  height: 480px;
+
+  background-color: transparent;
+  /* background-color: rgba(255, 255, 255, 0.699); */
+}
+#cartItems {
+  /* background-color: rgb(242, 238, 238); */
+  background-color: rgba(255, 255, 255, 0.769);
+
+  margin-right: 10px;
+
+  padding-left: 20px;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+#cartItems::-webkit-scrollbar {
+  display: none;
+}
+.item-details {
+  width: 230px;
+  margin-left: 40px;
+}
+
+.cart-item {
+  display: flex;
+  margin-bottom: 20px;
+  width: 790px;
+}
+
+.cart-item img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.quantity {
+  display: flex;
+  align-items: center;
+  margin-left: 40px;
+}
+.quantity input {
+  text-align: center;
+  width: 30px;
+}
+.quantity input::-webkit-outer-spin-button,
+.quantity input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+
+.price {
+  width: 80px;
+
+  margin: auto 0px auto 80px;
+}
+.remove-button {
+  margin-top: 18px;
+  margin-left: 40px;
+  height: 30px;
+  justify-content: center;
+  border: none;
+  padding: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+.head-item {
+  width: 790px;
+}
+.head-p {
+  font-size: 30px;
+}
+.item-v {
+  margin-top: 40px;
+  font-size: 20px;
+
+  margin-right: 25px;
+}
+.headitem-div {
+  display: flex;
+
+  justify-content: space-between;
+}
+.summary-top {
+  display: flex;
+
+  gap: 77px;
+}
+.summary {
+  margin-left: 19px;
+  padding-top: 19px;
+  padding-left: 30px;
+  width: 320px;
+  height: 330px;
+  background-color: rgba(255, 255, 255, 0.548);
+}
+.hori {
+  margin-top: 7px;
+  width: 295px;
+}
+.btn {
+  margin-top: 15px;
+  width: 280px;
+  background-color: black;
+  color: white;
+  padding: 12px;
+  cursor: pointer;
+}
+
+.plus {
+  cursor: pointer;
+}
+.minus {
+  cursor: pointer;
+}
+hr {
+  width: 245px;
+  margin: 0;
+  margin-bottom: 10px;
+}
+#bshop {
+  margin: 0 auto;
+  width: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  color: black;
+  border: none;
+  background-color: transparent;
+  margin-top: -40px;
+  cursor: pointer;
+}
+.cartheader {
+  width: 790px;
+}
+.cartheader p {
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  margin-top: 25%;
+}
+a:active {
+  text-decoration: none;
+}
+a:link {
+  text-decoration: none;
+}
+a:visited {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+.summary-item {
+  display: flex;
+  gap: 30px;
+}
+.coupon input[type="text"] {
+  width: 60%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  margin-right: 5px;
+}
+.Apply {
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  padding: 5px 10px;
+  width: 20%;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 10px;
+  height: 30px;
+  align-content: center;
+}
+.shipping-select {
+  width: 50%;
+  padding: 3px;
+  margin-top: -3px;
+}
